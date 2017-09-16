@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+<title>
+yesOrNo
+</title>
+<link rel="stylesheet" href="yesOrNo.css">
+<!--Fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$(function(){
+	$("#enter").click(function(){
+		yesOrNoFunc();
+		checkPhrase()
+	});
+	$('#qInput').keypress(function(e){
+		var key = e.which;
+		if (key == 13) {
+			yesOrNoFunc();
+		}
+		checkPhrase();
+	});
+	function yesOrNoFunc() {	
+		var yesOrNo = Math.floor((Math.random() * 4) + 1);
+		console.log(yesOrNo);
+		if ($("#qInput").val() !== "") {
+		$("#outputs").empty();
+		if (yesOrNo == 1) {
+			console.log('Yes')
+			$("#outputs").append('<p>Yes</p>');
+		} else if(yesOrNo == 2)  {
+			console.log('No')
+			$("#outputs").append('<p>No</p>')
+		} else if (yesOrNo == 3) {
+			console.log('Maybe')
+			$("#outputs").append('<p>Maybe</p>')
+		} else {
+			console.log('Ask Again')
+			$("#outputs").append('<p>Ask Again</p>')
+		}
+		$("#outputs p").animate({
+			left: '50%'
+		}, 'fast')
+		}
+	};
+	function checkPhrase() {
+		var value = $('#qInput').val();
+		if (value == 'changelog') {
+			$('#changelog').fadeIn('fast');
+		} 
+	};
+	$('#closeChangelog').click(function(){
+		$('#changelog').fadeOut('fast');
+	})
+	$("#menuButton1").click(function(){
+		$("#menu").animate({left: '0cm'}, 'fast')
+	});
+	$("#menuButton2").click(function(){
+		$("#menu").animate({left: '-10cm'}, 'fast')
+	});
+
+})
+</script>	
+</head>
+	
+<body>
+<div class="mainHeader">
+	<span id="menuButton1"><i class="material-icons">menu</i></span>
+	<h1>yesOrNo</h1>
+	<div id="qInputDiv">
+		<input type="text" id="qInput" placeholder="Ask a Question" />
+		<button id="enter"><i class="material-icons">search</i></button>
+	</div>
+</div>
+<div id="menu">
+	<div id="menuHeader">
+		<span id="menuButton2"><i class="material-icons">menu</i></span>
+	</div>
+	<h2 class="active"><a href="index.html">yesOrNo</a></h2>
+	<h2><a href="coinFlip.html">coinFlip</a></h2>
+	<p id="menuFooter">Made by Bradley Wilson</p>
+</div>
+
+	<div id="outputs">
+		
+	</div>	
+<div id="changelog">
+	<div id="changelogHeader">
+		<h2>Changelog</h2><span id="closeChangelog">x</span>
+	</div>
+	<div id="changelogBody">
+		<h3>V 2.0</h3>
+			<ul>
+				<li>Changed the font of the header to Roboto Slab</li>
+				<li>Changed the header text from 'Ask a question below' to 'yesOrNo', the websites name</li>
+				<li>Changed the styling of the ask bar to be slightly rounded and have padding at the sides and bottom</li>
+				<li>Moved the ask button from the bottom of the page to next to the ask bar</li>
+				<li>Changed the wording on the ask button from 'ask' to a search icon</li>
+				<li>Changed the Search button to blue</li>
+				<li>Changed the body color to #f0f0f0</li>
+				<li>Added a shadow to the slide out menu</li>
+			</ul>
+		<h3>[FUTURE] V 2.2</h3>
+			<ul>
+				<li>Add a coin flip page</li>
+				<li>Change the color scheme</li>
+			</ul>	
+		<h3>V 1.1.2</h3>
+			<ul>
+				<li>Changed the menu header from solid blue to a background</li>
+				<li>Pressing the yesOrNo button in the menu now reloads the page</li>
+			</ul>
+		<h3>V 1.1</h3>
+		<ul>
+			<li>Changed the menu button from an equals sign to an icon</li>
+			<li>Questions can now be asked with the enter key</li>	
+			<li>Added the changelog section</li>		
+			<li>Added support for checking for phrases entered</li>
+			<li>Already supporting entering 'changelog' displaying the changelog</li>	
+		</ul>		
+		
+	</div>
+</div>
+
+</body>
+</htmL>

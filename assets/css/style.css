@@ -1,0 +1,308 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	max-width: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	background-color: #f0f0f0;
+	color: white;
+}
+#coinFlipHeader {
+	width: 100%;
+	background-color: white;
+	float: left;
+	height: 75px;
+	position: absolute;
+	box-shadow: 0 0 5px grey;
+}
+.mainHeader {
+	width: 100%;
+	background-color: white;
+	float: left;
+	height: 150px;
+	position: absolute;
+	box-shadow: 0 0 5px grey;
+}
+.mainHeader h1 {
+	font-family: 'Roboto Slab';
+	font-weight: 550;
+	text-align: center;
+	color: #333;
+	width: auto;
+	float: left;
+	line-height: 2cm;
+	user-select: none;
+}
+.mainHeader span, #menuHeader span {
+	color: #333;
+	width: 2cm;
+	height: 2cm;
+	font-size: 60px;
+	font-family: arial;
+	float: left;
+	padding-left: 20px;
+	cursor: pointer;
+}
+
+#menu {
+	position: fixed;
+	top: 0;
+	left: -10cm;
+	width: 10cm;
+	height: 100%;
+	background-color: white;
+	font-family: arial;
+	z-index: 2;
+	box-shadow: 0 0 5px grey;
+}
+h2.active {
+	color: #2196F3;
+}
+#menu h2 {
+	color: black;
+	padding-left: 10px;
+	font-weight: 100;
+	cursor: pointer;
+	height: 50px;
+	background: #f0f0f0;
+	line-height: 50px;
+	user-select: none;
+}
+#menu a {
+	display: block;
+	color: black;
+	text-decoration: none;
+}
+
+#menuHeader {
+	color: white;
+	height: 200px;
+	background-image: url("background.jpg");
+	background-size: cover;
+	background-position: left top;
+}
+#menuHeader img {
+	width: 100%;
+	height: 150px;
+	background-size: cover;
+}
+#menuHeader h1 {
+	font-family: arial;
+	line-height: 50px;
+}
+#menuButton1 {
+	line-height: 60px;
+	user-select: none;
+}
+#menuButton2 {
+	line-height: 60px;
+	color: white;
+	user-select: none;
+}
+
+#header {
+	width: 100%;
+}
+#qInput {
+	width: calc(100% - 80px);
+	height: 60px;
+	border: none;
+	border-radius: 5px 0 0 5px;
+	background-color: #f0f0f0;
+	color: black;
+	padding-left: 5px;
+	margin-left: 10px;
+	font-family: 'Amatic SC', cursive;
+	font-size: 30px;
+}
+#qInputDiv {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	height: 60px;
+}
+#qInput:focus {
+	outline: none;
+}
+#enter {
+	/*Size and Position*/
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	/*Margin and Borders*/
+	border: none;
+	border-radius: 0 5px 5px 0;
+	/*Style*/
+	background-color: #03A9F4;
+	color: white;
+	z-index: 1;
+	user-select: none;
+}
+#enter:focus {
+	outline: none;
+}
+#outputs {
+	width: 100%;
+	height: calc(100% - 200px);
+	overflow-y: auto;
+	position: absolute;
+	top: 170px;
+	float: left;
+}
+#outputs p {
+	font-size: 50px;
+	font-family: arial;
+	width: auto;
+	color: #333;
+	position: absolute;
+	left: -300px;
+	transform: translate(-50%);
+}
+#changelog {
+	width: 300px;
+	height: 80%;
+	background-color: #fff;
+	box-shadow: 0 0 10px grey;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 4;
+	display: none;
+	overflow-y: auto;
+}
+#changelogHeader {
+	width: 100%;
+	height: 60px;
+	box-shadow: 0px 0px 5px grey;
+}
+#changelogBody {
+	position: absolute;
+	top: 60px;
+}
+#changelog  h2, #changelog p, li {
+	color: black;
+	font-family: arial;
+	padding: 5px;
+}
+#changelog h2 {
+	font-size: 25px;
+	height: 50px;
+	width: auto;
+	float: left;
+	line-height: 50px;
+}
+#changelog span {
+	font-size: 25px;
+	float: right;
+	width: 50px;
+	height: 50px;
+	color: black;
+	text-align: center;
+	line-height: 50px;
+	font-family: arial;
+	padding: 5px;
+	cursor: pointer;
+}
+#changelog li {
+	color: grey;
+}
+#changelog h3 {
+	color: black;
+	padding: 5px;
+	font-family: arial;
+}
+#changelog ul {
+	margin-left: 25px;
+}
+#menuFooter {
+	position: absolute;
+	bottom: 10px;
+	color: #9E9E9E;
+	text-align: center;
+	width: 100%;
+	font-family: 'Roboto', sans-serif;
+	user-select: none;
+}
+.coin {
+	width: 200px;
+	height: auto;
+	position: relative;
+	left: 50%;
+	display: block;
+	transform: translate(-50%);
+}
+#flipButtonDiv {
+	width: 225px;
+	height: 75px;
+	position: absolute;
+	right: 0px;
+}
+.flipButton {
+	width: 75px;
+	height: 100%;
+	border: none;
+	background-color: #fff;
+	color: #03A9F4;
+	float: left;
+	cursor: pointer;
+}
+.flipButton:focus {
+	outline: none;
+}
+#flipText {
+	position: absolute;
+	left: -200px;
+	top: 400px;
+	color: black;
+	text-align: center;
+	width: auto;
+	font-family: 'Roboto', sans-serif;
+}
+#info {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	bottom: 0;
+	background-color: #fff;
+	box-shadow: 0 0 5px grey;
+}
+.infoCol {
+	width: 50%;
+	float: left;
+}
+.infoCol li {
+	list-style-type: none;
+	display: block;
+	text-align: center;
+}
+
+#logo {
+	width: 600px;
+	height: auto;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+#seeMore {
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	bottom: 0;
+}
+#seeMore #seeMoreButton {
+	width: 100%;
+	height: 50px;
+	background-color: #f0f0f0;
+	border: none;
+	color: grey;
+	font-family: 'Roboto', sans-serif;
+	font-size: 25px;
+	font-weight: lighter;
+}
+#seeMoreButton:focus {
+	outline: none;
+}
