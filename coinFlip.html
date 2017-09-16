@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>coinFlip</title>
+<link rel="stylesheet" href="yesOrNo.css">	
+<!--Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$(function(){
+	var $flip 	  =  $('#flip'),
+		$flip_10  =  $('#flip_10'),
+		$clear 	  =  $('#clear'),
+		$outputs  =  $('#outputs');
+	function flip() {
+		var outcome = Math.floor((Math.random() * 100) + 1);
+		console.log(outcome);
+		if (outcome <= 50) {
+			$outputs.append('<img class="coin" src="Tails.png" />');
+		} else if (outcome > 50) {
+			$outputs.append('<img class="coin" src="heads_no_back.png"/>')
+		};
+		$('#flipText').stop().animate({
+			left: $('#flipText').parent().width() / 2 - $('#flipText').width() / 2
+		}, 500, function(){
+		$('#flipText').stop().animate({
+			left: '110%'  
+		}, 500, function() {
+			$('#flipText').css({'left': '-200px'});
+		})
+		});
+	}
+	$flip.click(function() {
+		$outputs.empty();
+		flip();
+	});
+	$flip_10.click(function(){
+		for (i = 1; i <= 10; i++) {
+			flip();
+		}
+	});
+	$clear.click(function(){
+		$outputs.empty();
+	})
+	$("#menuButton1").click(function(){
+		$("#menu").animate({left: '0cm'}, 'fast')
+	});
+	$("#menuButton2").click(function(){
+		$("#menu").animate({left: '-10cm'}, 'fast')
+	});
+})	
+</script>
+</head>
+<body>
+<div class="mainHeader" id="coinFlipHeader">
+	<span id="menuButton1"><i class="material-icons">menu</i></span>
+	<h1>coinFlip</h1>
+	<div id="flipButtonDiv">
+		<button class="flipButton" id="flip"><i class="material-icons">sync</i></button>
+		<button class="flipButton" id="flip_10">x 10</button>
+		<button class="flipButton" id="clear"><i class="material-icons">clear_all</i></button>
+	</div>
+</div>
+<div id="menu">
+	<div id="menuHeader">
+		<span id="menuButton2"><i class="material-icons">menu</i></span>
+	</div>
+	<h2 class="active"><a href="index.html">yesOrNo</a></h2>
+	<a href="coinFlip.html"><h2>coinFlip</h2></a>
+	<p id="menuFooter">Made by Bradley Wilson</p>
+</div>
+<div id="outputs">
+	
+	
+</div>
+<div id="flipTextWrap">
+	<p id="flipText">Flip!</p>
+</div>
+</body>
+</html>
